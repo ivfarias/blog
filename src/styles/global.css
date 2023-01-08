@@ -1,53 +1,103 @@
-html {
-  background-color: #f1f5f9;
-  font-family: sans-serif;
-}
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Mono:400|Inter:900');
+
+html {font-size: 100%;} /*16px*/
 
 body {
-  padding: 1rem;
+  background: #ADADAA;
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 400;
+  line-height: 2;
+  color: var(--clr-text);
+  background: var(--clr-body-bg)
+}
+
+p {margin-bottom: 1rem;}
+a {
+  font-weight: 600;
+  line-height: 2;
+  color: var(--clr-highlight, #3765AB);
+}
+
+h1, h2, h3, h4, h5 {
+  margin: 3rem 0 1.38rem;
+  font-family: 'Inter', sans-serif;
+  font-weight: 900;
   line-height: 1.5;
+  color: var(--clr-heading)
 }
 
-* {
-  box-sizing: border-box;
-}
+h1 {font-size: 3.052rem;}
 
-h1 {
-  margin: 1rem 0;
-  font-size: 2.5rem;
-}
+h2 {font-size: 2.441rem;}
+
+h3 {font-size: 1.953rem;}
+
+h4 {font-size: 1.563rem;}
+
+h5 {font-size: 1.25rem;}
+
+small, .text_small {font-size: 0.8rem;}
 
 /* nav styles */
 
 .nav-links {
   width: 100%;
   top: 5rem;
-  left: 48px;
-  background-color: #ff9776;
   display: flex;
-  margin: 0;
+  margin-left: 0;
+  flex-grow: 1;
+  gap: 1rem;
+  justify-content: center;
 }
 
 .nav-links a {
   display: block;
   text-align: center;
-  padding: 10px 0;
   text-decoration: none;
   font-size: 1.2rem;
   font-weight: bold;
   text-transform: uppercase;
 }
 
-.nav-links a:hover,
-a:focus {
-  background-color: #ff9776;
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
 }
 
-.dark body {
-  background-color: #0d0950;
-  color: #fff;
+.color-picker input[type="checkbox"] {
+  appearance: none;
+  width: 1.5rem;
+  height: 1.5rem;
+  outline: 3px solid var(--checkbox-color, #31312B);
+  outline-offset: 3px;
 }
 
-.dark .nav-links a {
-  color: #fff;
+.color-picker input[type="checkbox"]:checked {
+  background-color: var(--checkbox-color,#31312B);
+}
+
+.color-picker input[type="checkbox"]#light {
+  --checkbox-color: #31312B;
+}
+.color-picker input[type="checkbox"]#dark {
+  --checkbox-color: #FBF489;
+}
+
+.dark {
+  --clr-body-bg: #31312B;
+  --clr-text: #ADADAA;
+  --clr-highlight: #FBF489;
+  --clr-heading: #ADADAA;
+}
+
+:root:has(#dark:checked) {
+  --clr-body-bg: #31312B;
+  --clr-text: #ADADAA;
+  --clr-highlight: #FBF489;
+  --clr-heading: #ADADAA;
 }

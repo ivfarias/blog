@@ -40,52 +40,16 @@ small, .text_small {font-size: 0.8rem;}
 
 /* nav styles */
 
-.nav-links {
-  width: 100%;
-  top: 5rem;
+.nav-wrapper {
+  --max-width: 55rem;
+  width: min(100% - 2rem, var(--max-width));
+  margin-inline: auto;
+  border: 3px solid #ADADAA;
   display: flex;
-  margin-left: 0;
   flex-grow: 1;
   gap: 1rem;
+  padding: 1rem;
   justify-content: center;
-}
-
-.nav-links a {
-  display: block;
-  text-align: center;
-  text-decoration: none;
-  font-size: 1.2rem;
-  font-weight: bold;
-  text-transform: uppercase;
-}
-
-.visually-hidden {
-  clip: rect(0 0 0 0);
-  clip-path: inset(50%);
-  height: 1px;
-  overflow: hidden;
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
-}
-
-.color-picker input[type="checkbox"] {
-  appearance: none;
-  width: 1.5rem;
-  height: 1.5rem;
-  outline: 3px solid var(--checkbox-color, #31312B);
-  outline-offset: 3px;
-}
-
-.color-picker input[type="checkbox"]:checked {
-  background-color: var(--checkbox-color,#31312B);
-}
-
-.color-picker input[type="checkbox"]#light {
-  --checkbox-color: #31312B;
-}
-.color-picker input[type="checkbox"]#dark {
-  --checkbox-color: #FBF489;
 }
 
 .dark {

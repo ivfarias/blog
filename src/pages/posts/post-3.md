@@ -1,12 +1,12 @@
 ---
 layout: ../../layouts/MarkdownPostLayout.astro
-title: My Fourth Blog Post
-author: Astro Learner
-description: "This post will show up on its own!"
-image: 
-  url: "https://astro.build/assets/hero_NkT0b.avif"
-  alt: "Earth seen from space."
-pubDate: 2022-08-08
-tags: ["astro", "successes"]
+title: 'My second Blog Post'
+pubDate: 2022-07-01
+description: 'This is the second post of my new Astro blog.'
+author: 'Ivan Farias'
+image:
+    url: 'https://astro.build/assets/blog/astro-1-release-update/cover.jpeg' 
+    alt: 'The Astro logo with the word One.'
+tags: ["astro", "blogging", "learning in public"]
 ---
-This post should show up with my other blog posts, because `Astro.glob()` is returning a list of all my posts in order to create my list.
+After a successful first week learning Astro, I decided to try some more. I wrote and imported a small component from memory!

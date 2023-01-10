@@ -1,8 +1,44 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 
-const { pageTitle } = Astro.props;
+const pageTitle = "Home";
+
+const identity = {
+  firstName: "Ivan",
+  country: "Brazil",
+  occupation: "Head of growth",
+  hobbies: ["ukeleleing", "dadding"],
+};
+
+const skills = [{
+  "good": ["TOFU and MOFU Global strategies, ","copywritting, ","and crafting elegant solutions with very little resources"],
+  "okay": {},
+  "bad": "social media: Never got it. Don't really like it."
+  },
+];
+
 ---
-<BaseLayout pageTitle={pageTitle}>
-	<h2>My awesome blog subtitle</h2>
+<BaseLayout>
+    <h1 class="text-3xl md:text-5xl font-black">Ivan becomes a shark</h1>
+    <p>I am working through Astro's introductory tutorial. This is the second page on my website, and it's the first one I built myself!</p>
+    <p class="font-bold text-lg">Here are a few facts about me:</p>
+    <ul>
+      <li>My name is {identity.firstName}.</li>
+      <li>I live in {identity.country} and I work as a {identity.occupation}.</li>
+      {identity.hobbies.length >= 2 && 
+        <li>My main hobbies are: {identity.hobbies[0]} and {identity.hobbies[1]}</li>
+      } 
+    </ul>
+    <p class="font-bold text-lg">Things I'm good at:</p>
+    <ul>
+      {skills.map((skill) => <li class="skill">{skill.good}</li>)}
+    </ul>
+    <p>Things I'm okay at (but working on getting better):</p>
+    <ul>
+      {skills.map((skill) => <li class="skill">{skill.okay}</li>)}
+    </ul>
+    <p>Things I'm not good at:</p>
+    <ul>
+      {skills.map((skill) => <li class="skill">{skill.bad}</li>)}
+    </ul>
 </BaseLayout>

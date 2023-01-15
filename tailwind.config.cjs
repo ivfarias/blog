@@ -3,9 +3,9 @@ module.exports = {
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
 	theme: {
 		backgroundImage: {
-			'noise': "url('./public/img/sm-noise.png')",
-			'sm-squared-blk-1': "url('./public/img/sm-squared-blk-1.svg')",
-			'noise-grad-byr-1': "url('./public/img/noise-grad-byr-1.svg')"
+			'noise': "url('./img/sm-noise.png')",
+			'sm-squared-blk-1': "url('./img/sm-squared-blk-1.svg')",
+			'noise-grad-byr-1': "url('./img/noise-grad-byr-1.svg')"
 		},
 		colors: {
 			'riso-black-1': '#31312B',

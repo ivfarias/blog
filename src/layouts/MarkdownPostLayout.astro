@@ -1,5 +1,6 @@
 ---
 import BaseLayout from './BaseLayout.astro';
+import Navigation from '../components/Navigation.astro';
 const { frontmatter } = Astro.props;
 ---
 <BaseLayout>
@@ -13,7 +14,8 @@ const { frontmatter } = Astro.props;
     ))}
     </p>
   </div>
-  <div class="bg-kinda-white prose prose-lg font-mono max-w-full px-6 py-12">
+  <div class="bg-kinda-white prose prose-lg font-mono max-w-full px-12 py-24">
+    <Navigation />
     <img class="prose-img:rounded-xl" src={frontmatter.image.url} alt={frontmatter.image.alt} />
     <slot class="prose prose-lg"/>
   </div>

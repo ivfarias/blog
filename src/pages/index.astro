@@ -21,7 +21,7 @@ const pageTitle = "Home"
   </Hero>
   <SectionDivider>
   </SectionDivider>
-  <section>
+  <section class="max-w-full px-12 py-24">
     <div>
       <ul class="text-3xl md:text-5xl font-extrabold pb-6">
         {allPosts.map((post) => <BlogPost url={post.url} title={post.frontmatter.title} description={post.frontmatter.description}/>)}

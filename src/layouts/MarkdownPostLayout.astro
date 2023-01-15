@@ -3,17 +3,18 @@ import BaseLayout from './BaseLayout.astro';
 const { frontmatter } = Astro.props;
 ---
 <BaseLayout>
-  <article class="prose prose-lg">
-    <h1 class="text-3xl md:text-5xl font-extrabold h-20">{frontmatter.title}</h1>
-  <p>{frontmatter.description}</p>
-  <p>Written by: {frontmatter.author}</p>
-  <p>Published on: {frontmatter.pubDate.slice(0,10)}</p>
-  <img class="prose-img:rounded-xl" src={frontmatter.image.url} alt={frontmatter.image.alt} />
-  <slot class="prose prose-sm"/>
-  <div>
+  <div class="w-full h-screen flex flex-col justify-center items-center bg-cover bg-[url('../img/noise-grad-byr-1.svg')] px-12 py-24">
+    <h1 class="text-3xl md:text-6xl font-extrabold h-20">{frontmatter.title}</h1>
+    <p class="font-mono text-lg py-6">{frontmatter.description}</p>
+    <p class="font-mono text-lg py-1"><span class="font-bold">Published on: </span>{frontmatter.pubDate.slice(0,10)}</p>
+    <p class="font-mono text-lg py-1"><span class="font-bold">Tags: </span> 
     {frontmatter.tags.map((tag) => (
-      <p><a href={`/tags/${tag}`}>{tag}</a></p>
+      <a href={`/tags/${tag}`}>{tag}, </a>
     ))}
+    </p>
   </div>
-  </article>
+  <div class="bg-kinda-white prose prose-lg font-mono max-w-full px-6 py-12">
+    <img class="prose-img:rounded-xl" src={frontmatter.image.url} alt={frontmatter.image.alt} />
+    <slot class="prose prose-lg"/>
+  </div>
 </BaseLayout>

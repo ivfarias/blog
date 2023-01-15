@@ -39,6 +39,9 @@ a {
   --clr-highlight: #FBF489;
   --clr-heading: #ADADAA;
 }
+.svg-menu-icon {
+  --clr-highlight: #FFF;
+}
 
 :root:has(#dark:checked) {
   --clr-body-bg: #31312B;
